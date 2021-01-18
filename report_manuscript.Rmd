@@ -1,0 +1,76 @@
+---
+title: "Report Title"
+author: "Kevin Donkers (EI CDT) - 700063874"
+date: "01/01/2021"
+output:
+  bookdown::html_document2:
+    fig_caption: yes
+    number_sections: false
+    smart: no
+  bookdown::pdf_document2:
+    fig_caption: yes
+    number_sections: false
+    toc: false
+---
+```{r setup, include=FALSE}
+library(here)
+library(bookdown)
+library(kableExtra)
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, cache=TRUE, warning=FALSE, include=FALSE)
+knitr::read_chunk(here::here('scripts/init.R'))
+knitr::read_chunk(here::here('scripts/section1.R'))
+```
+
+# 0. Setup
+
+Code for loading and wrangling data:
+```{r 0LoadData, include=TRUE, echo=TRUE}
+```
+
+\pagebreak
+# 1. First section
+
+**Referencing objects:**
+Make sure to use CamelCase for reference tags - special characters break the referencing logic.
+
+
+Initialised library imports, etc. in this section of the code.
+Hide output.
+
+```{r 1Init}
+```
+
+
+Include the output of some code here.
+Hide code, show output.
+
+```{r 1Result, include=TRUE}
+```
+
+
+Include code and it's the output here.
+Show code and output.
+
+```{r 1Code, include=TRUE, echo=TRUE}
+```
+
+
+Include a table here, which has been formatted using `knitr::kable` and `kableExtra::kable_styling`.
+
+Captions need to be set when calling `knitr::kable`.
+
+Reference the table like this -> Table \@ref(tab:1Table)
+
+```{r 1Table, include=TRUE}
+```
+
+
+Include a plot without code.
+
+Set the plot parameters (e.g. `fig.height`, `fig.cap`) at this level.
+
+Reference figure like this -> Figure \@ref(fig:1Plot)
+
+```{r 1Plot, include=TRUE, fig.height=2, fig.cap="This is a figure."}
+```
+
