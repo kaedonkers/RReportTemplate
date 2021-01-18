@@ -8,7 +8,7 @@ library(ggplot2)
 ## @knitr 1Table
 
 data %>%
-    summary() %>%
+    head() %>%
     knitr::kable(caption="This is a table") %>%
     kableExtra::kable_styling(latex_options = "HOLD_position")
 
